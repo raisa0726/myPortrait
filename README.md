@@ -10,9 +10,9 @@
 | formater  | prettier           |
 | hosting   | Vercel             |
 
-## このリポジトリの役割
+## sorce
 
-勉強会の week6(最終週) で制作するブログの雛形です。
+https://github.com/sekiyan372/microcms-blog
 
 ## 推奨実行環境
 
