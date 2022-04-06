@@ -1,5 +1,6 @@
+import { faCircleInfo, faNewspaper } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type { NextPage } from 'next'
-import Link from 'next/link'
 import styled from 'styled-components'
 import Head from '~/components/Head'
 
@@ -84,7 +85,9 @@ const Card = styled.a`
   }
 `
 
+
 const Home: NextPage = () => {
+
   return (
     <>
       <Head title="home" />
@@ -99,30 +102,15 @@ const Home: NextPage = () => {
         </Description>
 
         <Grid>
-          <Card href="https://nextjs.org/docs">
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <Card href="/blog">
+            <h2>Blog</h2>
+            <FontAwesomeIcon icon={faNewspaper} />
           </Card>
-
-          <Card href="https://nextjs.org/learn">
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </Card>
-
-          <Card href="https://github.com/vercel/next.js/tree/canary/examples">
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </Card>
-
-          <Card href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+          <Card href="./about">
+            <h2>About</h2>
+            <FontAwesomeIcon icon={faCircleInfo} />
           </Card>
         </Grid>
-
-        <Link href="/blog">Blog Index Page</Link>
       </Section>
     </>
   )

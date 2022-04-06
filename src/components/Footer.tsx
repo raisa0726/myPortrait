@@ -1,7 +1,7 @@
 import { VFC } from 'react'
 import styled from 'styled-components'
 
-const FotterWrapper = styled.footer`
+const FooterWrapper = styled.footer`
   display: flex;
   flex: 1;
   padding: 2rem 0;
@@ -11,7 +11,7 @@ const FotterWrapper = styled.footer`
 `
 
 const Footer: VFC = () => {
-  return <FotterWrapper>©️ Suiki Sekiya 2022.</FotterWrapper>
+  return <FooterWrapper>©️ Shirai Chisato</FooterWrapper>
 }
 
 export default Footer

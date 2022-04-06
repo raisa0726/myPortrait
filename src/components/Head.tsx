@@ -22,6 +22,7 @@ const Head: VFC<Props> = (props) => {
       <meta name="description" content={DESCRIPTION} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="/favicon.ico" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     </NextHead>
   )
 }
