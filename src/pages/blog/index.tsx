@@ -1,12 +1,20 @@
-import Link from "next/link";
-import { client } from "../../libs/client";
+import Head from '~/components/Head'
+import { NextPage } from 'next'
+import Link from "next/link"
+import { client } from "~/libs/client"
+import { Article, Contents } from '~/types'
 
-export default function Home({ blog }) {
+type Props = {
+  articles: Article[]
+}
+
+const IndexBlog: NextPage<Props> = ({ articles }) => {
   return (
-    <div>
+    <>
+      <Head title="記事一覧" />
       <h1>記事一覧</h1>
       <ul>
-        {blog.map((blog) => (
+        {articles.map((blog) => (
           <li key={blog.id}>
             <Link href={`/blog/${blog.id}`}>
               <a>{blog.title}</a>
@@ -14,17 +22,19 @@ export default function Home({ blog }) {
           </li>
         ))}
       </ul>
-    </div>
-  );
+    </>
+  )
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
+  const data: Contents = await client.get({ endpoint: "blog" });
 
   return {
     props: {
-      blog: data.contents,
+      articles: data.contents,
     },
   };
 };
+
+export default IndexBlog
