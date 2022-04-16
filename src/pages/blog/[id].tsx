@@ -3,7 +3,7 @@ import { client } from "~/libs/client";
 import { Article, Contents } from "~/types"
 import Head from '~/components/Head'
 import { Link } from "react-router-dom"
-import { faTurnDownLeft } from '@fortawesome/free-solid-svg-icons'
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type Props = {
@@ -14,10 +14,10 @@ const ShowBlog: NextPage<Props> = ({ blog }) => {
   return (
     <>
       <Head title={blog.title} />
-      <Link href='./'>
-        <FontAwesomeIcon icon={faTurnDownLeft} />
+      {/* <Link to='./blog'>
+        <FontAwesomeIcon icon={faAngleLeft} />
         戻る
-      </Link>
+      </Link> */}
       <h1>{blog.title}</h1>
       <small>作成日時:{blog.published_at}</small>
       <div
