@@ -11,11 +11,12 @@
 | hosting   | Vercel             |
 
 ## site
-https://raisa-blog.vercel.app/
+
+[実際のサイト]<https://raisa-blog.vercel.app/>
 
 ## sorce
 
-https://github.com/sekiyan372/microcms-blog
+[ソース元]<https://github.com/sekiyan372/microcms-blog>
 
 ## 推奨実行環境
 
