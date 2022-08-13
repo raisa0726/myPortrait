@@ -1,117 +1,50 @@
-import { faCircleInfo, faNewspaper } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type { NextPage } from 'next'
+import React from 'react';
 import styled from 'styled-components'
 import Head from '~/components/Head'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-const Section = styled.section`
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+const TwitterArea = styled.div`
+  margin: 5px;
 `
-
-const Title = styled.h1`
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-  text-align: center;
-  a {
-    color: #0070f3;
-    text-decoration: none;
-  }
-  a:hover,
-  a:focus,
-  a:active {
-    text-decoration: underline;
-  }
-`
-
-const Description = styled.p`
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-  text-align: center;
-`
-
-const Code = styled.code`
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-`
-
-const Grid = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  @media (max-width: 600px) {
-    width: 100%;
-    flex-direction: column;
-  }
-`
-
-const Card = styled.a`
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
-  &:hover,
-  &:focus,
-  &:active {
-    color: #0070f3;
-    border-color: #0070f3;
-  }
-  h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-  }
-  p {
-    margin: 0;
-    font-size: 1.25rem;
-    line-height: 1.5;
-  }
-`
-
 
 const Home: NextPage = () => {
-
+  React.useEffect(() => {
+    const s = document.createElement("script");
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    s.setAttribute("async", "true");
+    document.head.appendChild(s);
+  }, []);
   return (
     <>
       <Head title="home" />
-
-      <Section>
-        <Title>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </Title>
-
-        <Description>
-          Get started by editing <Code>pages/index.tsx</Code>
-        </Description>
-
-        <Grid>
-          <Card href="/blog">
-            <h2>Blog</h2>
-            <FontAwesomeIcon icon={faNewspaper} />
-          </Card>
-          <Card href="./about">
-            <h2>About</h2>
-            <FontAwesomeIcon icon={faCircleInfo} />
-          </Card>
-        </Grid>
-      </Section>
+      <Container>
+        <Row>
+          <h2>Welcome to Raisa's site!</h2>
+          <a>このサイトはRaisaに関することをまとめています。</a>
+        </Row>
+        <Row>
+          <Col sm={8}>
+            <Row>
+              <h3>feature</h3>
+              <a>より多くの情報を掲載していきます。</a>
+            </Row>
+          </Col>
+          <Col sm={4}>
+            <h3>My Twitter</h3>
+            <TwitterArea>
+              <a className="twitter-timeline"
+                data-lang="ja"
+                data-theme="dark"
+                data-chrome="noheader nofooter"
+                data-height="400"
+                href="https://twitter.com/SC_Raisa?ref_src=twsrc%5Etfw" />
+            </TwitterArea>
+          </Col>
+        </Row>
+      </Container>
     </>
   )
 }

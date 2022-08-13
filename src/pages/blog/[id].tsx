@@ -2,9 +2,7 @@ import { NextPage } from "next";
 import { client } from "~/libs/client";
 import { Article, Contents } from "~/types"
 import Head from '~/components/Head'
-import { Link } from "react-router-dom"
-import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Container from 'react-bootstrap/Container';
 
 type Props = {
   blog: Article
@@ -14,17 +12,19 @@ const ShowBlog: NextPage<Props> = ({ blog }) => {
   return (
     <>
       <Head title={blog.title} />
-      {/* <Link to='./blog'>
+      <Container>
+        {/* <Link to='./blog'>
         <FontAwesomeIcon icon={faAngleLeft} />
         戻る
       </Link> */}
-      <h1>{blog.title}</h1>
-      <small>作成日時:{blog.published_at}</small>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.body}`,
-        }}
-      />
+        <h1>{blog.title}</h1>
+        <small>作成日時:{blog.published_at}</small>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `${blog.body}`,
+          }}
+        />
+      </Container>
     </>
   );
 }
@@ -37,7 +37,7 @@ export const getStaticPaths = async () => {
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context: { params: {id: string}}) => {
+export const getStaticProps = async (context: { params: { id: string } }) => {
   const id = context.params.id;
   const data: Article = await client.get({ endpoint: "blog", contentId: id });
 

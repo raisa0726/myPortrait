@@ -1,6 +1,12 @@
+$primary-color: #99ccff;
+$primary-Light: #cce6ff;
+$primary-Dark: #4d6680;
+$Secondary-color: #ffcc99;
+$Secondary-Light: #ffe6cc;
+$Secondary-Dark: #80664d;
+
 html,
 body {
-  padding: 0 2rem;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -11,7 +17,12 @@ body {
   box-sizing: border-box;
 }
 
-.svg-inline--fa{
+span {
+  color: $primary-Dark;
+  font-weight: bold;
+}
+
+.svg-inline--fa {
   display: flex;
   justify-content: center;
   align-items: center;
