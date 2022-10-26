@@ -3,7 +3,6 @@ import { NextPage } from 'next'
 import Link from "next/link"
 import { client } from "~/libs/client"
 import { Article, Contents } from '~/types'
-import Container from 'react-bootstrap/Container';
 
 
 type Props = {
@@ -14,8 +13,12 @@ const IndexBlog: NextPage<Props> = ({ articles }) => {
   return (
     <>
       <Head title="記事一覧" />
-      <Container>
-        <h1>記事一覧</h1>
+      <div className='mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8'>
+        <h1 className='text-3xl font-bold tracking-tight text-gray-900'>記事一覧</h1>
+      </div>
+      <div className='mx-auto max-w-7xl py-6 sm:px-6 lg:px-8'>
+        <div className='px-4 py-6 sm:px-0'>
+          <div className='h-96 rounded-lg border-4 border-dashed border-gray-200'>
         <ul>
           {articles.map((blog) => (
             <li key={blog.id}>
@@ -24,8 +27,10 @@ const IndexBlog: NextPage<Props> = ({ articles }) => {
               </Link>
             </li>
           ))}
-        </ul>
-      </Container>
+            </ul>
+            </div>
+          </div>
+      </div>
     </>
   )
 }

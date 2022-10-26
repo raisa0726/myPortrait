@@ -2,9 +2,6 @@ import type { NextPage } from 'next'
 import React from 'react';
 import styled from 'styled-components'
 import Head from '~/components/Head'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 const TwitterArea = styled.div`
   margin: 5px;
@@ -20,19 +17,20 @@ const Home: NextPage = () => {
   return (
     <>
       <Head title="home" />
-      <Container>
-        <Row>
-          <h2>Welcome to Raisa's site!</h2>
+      <div className='mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
+        <div className='text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl'>
+          <span className="sr-only">Welcome to Raisa's site!</span>
           <a>このサイトはRaisaに関することをまとめています。</a>
-        </Row>
-        <Row>
-          <Col sm={8}>
-            <Row>
+        </div>
+        <div className='md:grid md:grid-cols-2 md:gap-6'>
+          <div className='md:col-span-1'>
+            <div className='mt-5 sm:px-0'>
               <h3>feature</h3>
-              <a>より多くの情報を掲載していきます。</a>
-            </Row>
-          </Col>
-          <Col sm={4}>
+              <p className='block rounded-md px-3 py-2 text-base font-medium text-gray-700'>より多くの情報を掲載していきます。</p>
+            </div>
+          </div>
+          <div className="md:col-span-1">
+            <div className='mt-5 sm:px-0'>
             <h3>My Twitter</h3>
             <TwitterArea>
               <a className="twitter-timeline"
@@ -41,10 +39,11 @@ const Home: NextPage = () => {
                 data-chrome="noheader nofooter"
                 data-height="400"
                 href="https://twitter.com/SC_Raisa?ref_src=twsrc%5Etfw" />
-            </TwitterArea>
-          </Col>
-        </Row>
-      </Container>
+              </TwitterArea>
+              </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

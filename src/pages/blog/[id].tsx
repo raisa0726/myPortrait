@@ -2,7 +2,6 @@ import { NextPage } from "next";
 import { client } from "~/libs/client";
 import { Article, Contents } from "~/types"
 import Head from '~/components/Head'
-import Container from 'react-bootstrap/Container';
 
 type Props = {
   blog: Article
@@ -12,7 +11,7 @@ const ShowBlog: NextPage<Props> = ({ blog }) => {
   return (
     <>
       <Head title={blog.title} />
-      <Container>
+      <div className='mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
         {/* <Link to='./blog'>
         <FontAwesomeIcon icon={faAngleLeft} />
         戻る
@@ -24,7 +23,7 @@ const ShowBlog: NextPage<Props> = ({ blog }) => {
             __html: `${blog.body}`,
           }}
         />
-      </Container>
+      </div>
     </>
   );
 }

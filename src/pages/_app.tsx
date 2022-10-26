@@ -1,6 +1,4 @@
 import '~/styles/globals.scss'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import Header from '~/components/Header'

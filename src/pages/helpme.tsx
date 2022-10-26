@@ -1,4 +1,3 @@
-import Container from 'react-bootstrap/Container';
 import { VFC } from 'react'
 import Head from '~/components/Head'
 
@@ -6,7 +5,7 @@ const HelpMe: VFC = () => {
   return (
     <>
       <Head title="helpme" />
-      <Container>
+      <div className='mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
         <h1>about my help mark</h1>
         <a>私は以下の治療を行っています</a>
         <ul>
@@ -19,7 +18,7 @@ const HelpMe: VFC = () => {
           <li>突然泣き始める/泣いている/泣きそう</li>
           <li>だるそうにしている</li>
         </ul>
-      </Container>
+      </div>
     </>
   )
 }

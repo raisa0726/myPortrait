@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 $primary-color: #99ccff;
 $primary-Light: #cce6ff;
 $primary-Dark: #4d6680;
@@ -20,12 +24,4 @@ body {
 span {
   color: $primary-Dark;
   font-weight: bold;
-}
-
-.svg-inline--fa {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 1.5em;
-  margin: auto;
 }
