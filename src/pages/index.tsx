@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       <div className='mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
         <div className='text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl'>
           <span className="sr-only">Welcome to Raisa's site!</span>
-          <a>このサイトはRaisaに関することをまとめています。</a>
+          <p>このサイトはRaisaに関することをまとめています。</p>
         </div>
         <div className='md:grid md:grid-cols-2 md:gap-6'>
           <div className='md:col-span-1'>

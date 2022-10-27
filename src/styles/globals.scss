@@ -8,20 +8,3 @@ $primary-Dark: #4d6680;
 $Secondary-color: #ffcc99;
 $Secondary-Light: #ffe6cc;
 $Secondary-Dark: #80664d;
-
-html,
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-size: 1em;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-span {
-  color: $primary-Dark;
-  font-weight: bold;
-}
